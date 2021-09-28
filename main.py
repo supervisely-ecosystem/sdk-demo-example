@@ -13,9 +13,7 @@ api = sly.Api(address, token)
 STEP 1 — Create project
 """
 
-# Init project remotely
 workspace_id = 354
-
 project_name = 'demo_project'
 dataset_name = 'demo_dataset'
 
@@ -41,7 +39,6 @@ img_info = api.image.upload_np(dataset.id, name="test_image.png", img=test_image
 # Uploade annotation
 label_defect = sly.Label(sly.Rectangle(top=46, left=122, bottom=114, right=180), class_defect)
 ann = sly.Annotation((height, width), [label_defect])
-
 api.annotation.upload_ann(img_info.id, ann)
 
 
